@@ -6,6 +6,11 @@ pipeline{
             steps{
                 git credentialsId: 'github', url: 'https://github.com/javahometech/myweb'
             }
-        }            
+        }  
+        stage("Build"){
+            steps{
+               sh "mvn clean install"
+            }
+        } 
     }
 }
